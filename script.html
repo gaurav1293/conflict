@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>my page</title>
+        <link href="bootstrap\dist\css\bootstrap.min.css"  rel="stylesheet" >
+        <script src="js\bootstrap.min.js"></script>
+        <style>
+          #button {background-color:darkblue; text-align: center; color: white}
+          
+        </style>
+        </head>
+        <body>
+          <h2 id="heading" >Click a list item to replace this text</h2> 
+          <button type="button" value="button" id="button" >Add new item </button>
+          <ul id="list">
+             <li>first item</li>  <br>
+             <li>second item</li> <br>
+             <li>third item</li>  <br>
+             <li>fourth item</li> <br>
+          </ul>
+          <script>
+            var increasecount = 1;
+            var ourlist = document.getElementById("list")
+            var mybutton = document.getElementById("button")
+            var ourhead = document.getElementById("heading")
+            function bindEvent(){
+            var litem = document.getElementById("list").getElementsByTagName("li")
+            for (i=0; i<litem.length; i++ ){
+            litem[i].addEventListener("click", activate);
+            }
+            }
+            function activate(){
+             ourhead.innerHTML = this.innerHTML; 
+            }
+          
+            mybutton.addEventListener("click", createnewitem);
+            function createnewitem() {
+              ourlist.innerHTML += "<li>something new " + increasecount + "<br> <br>" + "</li>";
+              increasecount++;
+              bindEvent();
+            }
+          
+          bindEvent();          
+          </script>
+        
+        </body>
+</html>
