@@ -9,6 +9,12 @@
         </style>
         </head>
         <body>
+        <script>
+            var increasecount = 1;
+            var ourlist = document.getElementById("list")
+            var mybutton = document.getElementById("button")
+            var ourhead = document.getElementById("heading")
+        </script>
           <h2 id="heading" >Click a list item to replace this text</h2> 
           <button type="button" value="button" id="button" >Add new item </button>
           <ul id="list">
@@ -38,6 +44,10 @@
               increasecount++;
               bindEvent();
             }
+            var increasecount = 1;
+            var ourlist = document.getElementById("list")
+            var mybutton = document.getElementById("button")
+            var ourhead = document.getElementById("heading")
           
           bindEvent();          
           </script>
